@@ -1,6 +1,6 @@
 from distutils.core import setup
 
-setup(name='PyCamcoil',
+setup(name='pycamcoil',
       version='1.0',
-      packages=['pycamcoil'],
+      packages=['src'],
      )
