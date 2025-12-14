@@ -1,0 +1,38 @@
+{% set name = "PyCamcoil" %}
+{% set version = "1.0.4" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/MinaCullen/PyCamcoil.git
+  git_rev: "v1.0.4"
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  imports:
+    - pycamcoil
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  license: GPL-3.0-only
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - MinaCullen
